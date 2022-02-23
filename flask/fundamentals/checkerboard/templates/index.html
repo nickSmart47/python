@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+
+<body>
+    {% if rows and columns and color1 and color2%}
+    <h1 class="inline" style="background-color:{{color2}};color:{{color1}};">*** Checkerboard ***</h1>
+    {% for row in range(0, rows) %}
+    <div class="row flexed">
+        {% if row % 2 == 0 %}
+            {% for column in range(0, columns) %}
+                {% if column % 2 == 0 %}
+                <div class="square" style="background-color:{{color2}}"></div>
+                {% else %}
+                <div class="square" style="background-color:{{color1}}"></div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for column in range(0, columns) %}
+                {% if column % 2 == 0 %}
+                <div class="square" style="background-color:{{color1}}"></div>
+                {% else %}
+                <div class="square" style="background-color:{{color2}}"></div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div> 
+{% endfor %}
+    {% elif rows and columns %}
+    <h1 class="inline black">*** Checkerboard ***</h1>
+        {% for row in range(0, rows) %}
+        <div class="row flexed">
+            {% if row % 2 == 0 %}
+                {% for column in range(0, columns) %}
+                    {% if column % 2 == 0 %}
+                    <div class="square black"></div>
+                    {% else %}
+                    <div class="square red"></div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% for column in range(0, columns) %}
+                    {% if column % 2 == 0 %}
+                    <div class="square red"></div>
+                    {% else %}
+                    <div class="square black"></div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div> 
+    {% endfor %}
+    {% elif rows %}
+    <h1 class="inline black">*** Checkerboard ***</h1>
+        {% for row in range(0, rows) %}
+            {% if row % 2 == 0 %}
+                <div class="row flexed">
+                    <div class="square black"></div>
+                    <div class="square red"></div>
+                    <div class="square black"></div>
+                    <div class="square red"></div>
+                    <div class="square black"></div>
+                    <div class="square red"></div>
+                    <div class="square black"></div>
+                    <div class="square red"></div>
+                </div>
+            {% else %}
+            <div class="row flexed">
+                <div class="square red"></div>
+                <div class="square black"></div>
+                <div class="square red"></div>
+                <div class="square black"></div>
+                <div class="square red"></div>
+                <div class="square black"></div>
+                <div class="square red"></div>
+                <div class="square black"></div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    <h1 class="inline black">*** Checkerboard ***</h1>
+    <div class="eight-by-eight">
+        <div class="row flexed">
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+        </div>
+        <div class="row flexed">
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+            <div class="square black"></div>
+            <div class="square red"></div>
+        </div>
+    </div>
+    {% endif %}
+</body>
+
+</html>

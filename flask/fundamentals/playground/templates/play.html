@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+</head>
+
+<body>
+    <h1 style="text-align:center;">Welcome!</h1>
+    {% if number and color %}
+    <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;">
+        {% for num in range(0, number) %}
+        <div style="background-color:{{color}};min-height:100%;margin:1.5em;padding:50px;border: 2px solid black;">
+        </div>
+        {% endfor %}
+    </div>
+
+    {% elif number %}
+    <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;">
+        {% for num in range(0, number) %}
+        <div style="background-color:lightblue;min-height:100%;margin:1.5em;padding:50px;border: 2px solid black;">
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+
+
+    <div style="display:flex;justify-content:center;align-items:center;">
+        <div style="background-color:lightblue;min-height:100%;margin:1.5em;padding:50px;border: 2px solid black;">
+        </div>
+        <div style="background-color:lightblue;min-height:100%;margin:1.5em;padding:50px;border: 2px solid black;">
+        </div>
+        <div style="background-color:lightblue;min-height:100%;margin:1.5em;padding:50px;border: 2px solid black;">
+        </div>
+    </div>
+
+    {% endif %}
+</body>
+
+</html>

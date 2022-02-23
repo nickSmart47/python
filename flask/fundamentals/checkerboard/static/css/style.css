@@ -1,0 +1,42 @@
+.row{
+    /* min-height:20px; */
+    /* background-color: aqua */
+}
+
+.square{
+    /* width:100%; */
+    padding:35px;
+    /* height:100%; */
+    /* border: 2px solid black; */
+}
+
+h1{
+    margin:.5em;
+    text-align: center;
+}
+
+
+
+.red{
+    background-color: red;
+}
+
+.black{
+    background-color: black;
+    color: red;
+}
+.flexed{
+    display:flex;
+    justify-content:center;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+.inline{
+    display:inline-block;
+}
