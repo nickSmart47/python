@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <h1>{{department.name}}</h1>
+    <h3>{{department.location}}</h3>
+    {% if department.employees %}
+    <ul>
+        {% for employee in department.employees %}
+        <li>{{employee.first_name}} {{employee.last_name}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Department currently has no employees.</p>
+    {% endif %}
+    <p>Add new employee to department:</p>
+    <form action="/departments/{{department.id}}/add_employee" method = "POST">
+        First name: <input type="text" name="first_name"><br>
+        Last name: <input type="text" name="last_name"><br>
+        Salary : <input type="number" name="salary"> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

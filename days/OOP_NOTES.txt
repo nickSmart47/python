@@ -1,0 +1,2 @@
+OOP is combination of BEHAVIOR and DATA
+(linking behavior and data)

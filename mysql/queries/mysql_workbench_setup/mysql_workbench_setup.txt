@@ -1,0 +1,4 @@
+INSERT INTO employees (first_name, last_name, salary, department_id) values ('James', 'Coolington', 50000, 1);
+SELECT * FROM employees WHERE salary > 50000
+UPDATE employees SET salary = (80000) WHERE last_name = ('Coolington');
+DELETE FROM employees WHERE last_name = ('Coolington');

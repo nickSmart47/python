@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BigCorp Department Index</h1>
+    {% for d in departments %}
+    <h2>{{d.name}}</h2>
+    <a href='/departments/{{d.id}}/delete'>delete</a> <a href='/departments/{{d.id}}/edit'>edit</a>
+    <p>Head office: {{d.location}}</p>
+    <p>Employees:</p>
+    {% if d.employees != [] %}
+    <ul>
+        {% for employee in d.employees %}
+        <li>{{employee.first_name}} {{employee.last_name}}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No employees in this department</p>
+    {% endif %}
+    {% endfor %}
+
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form action='/departments/create' method=POST>
+        Department name: <input type='text' name='department_name'><br>
+        Department location: <input type='text' name='department_location'><br>
+        <input type='submit'>
+    </form>
+
+</body>
+</html>

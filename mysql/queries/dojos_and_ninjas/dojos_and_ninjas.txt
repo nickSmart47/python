@@ -1,0 +1,57 @@
+Query: Create 3 new dojos
+
+
+INSERT INTO dojos (name) values ('Cat Piano Dojo');
+INSERT INTO dojos (name) values ('Plant Daddy Dojo');
+INSERT INTO dojos (name) values ('Maltese Master Dojo');
+
+
+Query: Delete the 3 dojos you just created
+
+DELETE FROM dojos where id = 1 or id = 2 or id = 3
+
+
+Query: Create 3 more dojos
+
+INSERT INTO dojos (name) values ('Face to Fist Style');
+INSERT INTO dojos (name) values ('Way of the Drunken Master');
+INSERT INTO dojos (name) values ('Gentle Caressing Scorpion');
+
+
+Query: Create 3 ninjas that belong to the first dojo
+
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Nick', 'Smart', 30, 4);
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Seth', 'Sethington', 30, 4);
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Face', 'Fistington', 60, 4);
+
+Query: Create 3 ninjas that belong to the second dojo
+
+
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Dylan', 'Dudeington', 31, 5);
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Colin', 'Lazopolous', 42, 5);
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Kid', 'whoopington', 21, 5);
+
+
+Query: Create 3 ninjas that belong to the third dojo
+
+
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Sickdude', 'Ninjabro', 18, 6);
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Scorpion', 'Scorpionlover', 14, 6);
+INSERT into ninjas (first_name, last_name, age, dojo_id) values ('Gentle', 'Grandmaster', 70, 6);
+
+
+Query: Retrieve all the ninjas from the first dojo
+
+
+SELECT * FROM ninjas WHERE dojo_id = 4
+
+
+Query: Retrieve all the ninjas from the last dojo
+
+
+SELECT * FROM ninjas WHERE dojo_id = 6
+
+
+Query: Retrieve the last ninja's dojo
+
+SELECT dojo_id FROM ninjas WHERE id = 9
